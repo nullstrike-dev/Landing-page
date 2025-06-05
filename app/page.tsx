@@ -10,19 +10,13 @@ export default function Home() {
   <h1 className="text-3xl font-bold text-[#22c55e]">NullStrike</h1>
   <ul className="flex space-x-6 text-[#bbf7d0] text-sm">
     <li>
-      <Link href="#about" legacyBehavior>
-        <a className="hover:text-[#34d399] transition-colors">About</a>
-      </Link>
+      <a href="#about" className="hover:text-[#34d399] transition-colors">About</a>
     </li>
     <li>
-      <Link href="#support" legacyBehavior>
-        <a className="hover:text-[#34d399] transition-colors">Support</a>
-      </Link>
+      <a href="#support" className="hover:text-[#34d399] transition-colors">Support</a>
     </li>
     <li>
-      <Link href="/tools/osint" legacyBehavior>
-        <a className="hover:text-[#34d399] transition-colors">OSINT Toolkit</a>
-      </Link>
+      <a href="/tools/osint" className="hover:text-[#34d399] transition-colors">OSINT Toolkit</a>
     </li>
     <li>
       <a href="https://hackforums.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#34d399] transition-colors">Community</a>
