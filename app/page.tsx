@@ -3,18 +3,25 @@ import QRCode from 'react-qr-code';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0f172a] text-[#a3f7bf] font-mono">
-      {/* Navbar */}
- <nav className="flex justify-between items-center px-8 py-4 bg-[#064e3b] shadow-md">
+  import Link from "next/link";
+
+<nav className="flex justify-between items-center px-8 py-4 bg-[#064e3b] shadow-md">
   <h1 className="text-3xl font-bold text-[#22c55e]">NullStrike</h1>
   <ul className="flex space-x-6 text-[#bbf7d0] text-sm">
     <li>
-      <a href="#about" className="hover:text-[#34d399] transition-colors">About</a>
+      <Link href="#about" legacyBehavior>
+        <a className="hover:text-[#34d399] transition-colors">About</a>
+      </Link>
     </li>
     <li>
-      <a href="#support" className="hover:text-[#34d399] transition-colors">Support</a>
+      <Link href="#support" legacyBehavior>
+        <a className="hover:text-[#34d399] transition-colors">Support</a>
+      </Link>
     </li>
     <li>
-      <a href="/tools/osint" className="hover:text-[#34d399] transition-colors">OSINT Toolkit</a>
+      <Link href="/tools/osint" legacyBehavior>
+        <a className="hover:text-[#34d399] transition-colors">OSINT Toolkit</a>
+      </Link>
     </li>
     <li>
       <a href="https://hackforums.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#34d399] transition-colors">Community</a>
