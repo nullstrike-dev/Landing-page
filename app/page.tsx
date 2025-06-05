@@ -1,9 +1,10 @@
 import QRCode from 'react-qr-code';
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0f172a] text-[#a3f7bf] font-mono">
-  import Link from "next/link";
+  
 
 <nav className="flex justify-between items-center px-8 py-4 bg-[#064e3b] shadow-md">
   <h1 className="text-3xl font-bold text-[#22c55e]">NullStrike</h1>
