@@ -55,6 +55,9 @@ export default function FakeLoginPageBuilder() {
               Sign In
             </button>
           </form>
+          <p className="text-xs text-[#64748b] mt-6 text-center">
+  ⚠️ This login clone is for cybersecurity education & phishing simulation only.
+</p>
         </div>
       </div>
     </div>
