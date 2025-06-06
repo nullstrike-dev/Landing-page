@@ -19,6 +19,9 @@ export default function Home() {
       <a href="/tools/osint" className="hover:text-[#34d399] transition-colors">OSINT Toolkit</a>
     </li>
     <li>
+      <a href="/tools/payload" className="hover:text-[#34d399] transition-colors">Payload Generator</a>
+    </li>
+    <li>
       <a href="https://hackforums.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#34d399] transition-colors">Community</a>
     </li>
   </ul>
