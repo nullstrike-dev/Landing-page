@@ -23,7 +23,7 @@ export default function RootLayout({
             <li><a href="/tools/osint" className="hover:text-[#34d399]">OSINT</a></li>
             <li><a href="/tools/payload" className="hover:text-[#34d399]">Payloads</a></li>
             <li><a href="/tools/phishing" className="hover:text-[#34d399]">Phishing</a></li>
-            <li><Link href="/tools/scan">Port Scanner</Link></li>
+            <li><a href="/tools/scan" className="hover:text-[#34d399]">Scanner</a></li>
             <li><a href="https://hackforums.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#34d399]">Community</a></li>
           </ul>
         </nav>
