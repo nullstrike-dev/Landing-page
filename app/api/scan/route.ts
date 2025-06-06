@@ -1,32 +1,34 @@
-// /app/api/scan/route.ts
-import { NextResponse } from 'next/server';
+// app/api/scan/route.ts
+
+import { NextRequest } from 'next/server';
 import { exec } from 'child_process';
+import { promisify } from 'util';
 
-export async function POST(req: Request) {
+const execAsync = promisify(exec);
+
+export async function POST(req: NextRequest): Promise<Response> {
   try {
-    const { host, ports } = await req.json();
+    const body = await req.json();
+    const { host, ports } = body;
 
-    if (!host) {
-      return NextResponse.json({ error: 'Missing host' }, { status: 400 });
+    if (!host || typeof host !== 'string') {
+      return new Response(JSON.stringify({ error: 'Invalid host' }), { status: 400 });
     }
 
-    // Sanitize input: only allow digits, dots, and colons in host, numbers and commas in ports
-    const safeHost = host.replace(/[^a-zA-Z0-9.:-]/g, '');
-    const safePorts = ports ? ports.replace(/[^0-9,-]/g, '') : '';
+    // Use a basic port range or default
+    const portRange = ports || '1-1024';
+    const command = `nmap -p ${portRange} ${host}`;
 
-    const portArg = safePorts ? `-p ${safePorts}` : '';
-    const cmd = `nmap ${portArg} ${safeHost}`;
+    const { stdout } = await execAsync(command);
 
-    return new Promise((resolve) => {
-      exec(cmd, (error, stdout, stderr) => {
-        if (error) {
-          resolve(NextResponse.json({ error: stderr || 'Scan failed' }, { status: 500 }));
-        } else {
-          resolve(NextResponse.json({ result: stdout }));
-        }
-      });
+    return new Response(JSON.stringify({ result: stdout }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
     });
-  } catch (e) {
-    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  } catch (error: any) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
