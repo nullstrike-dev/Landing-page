@@ -6,6 +6,7 @@ export default function OSINTPage() {
       <h1 className="text-4xl font-bold mb-8 text-center text-[#22c55e]">OSINT Toolkit</h1>
       <OsintTool />
     </div>
+    <div>
     <nav className="flex justify-between items-center px-8 py-4 bg-[#064e3b] shadow-md">
   <h1 className="text-3xl font-bold text-[#22c55e]">NullStrike</h1>
   <ul className="flex space-x-6 text-[#bbf7d0] text-sm">
@@ -17,5 +18,6 @@ export default function OSINTPage() {
   <li><a href="https://hackforums.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#34d399]">Community</a></li>
   </ul>
   </nav>
+    </div>
   );
 }
