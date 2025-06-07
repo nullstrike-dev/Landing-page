@@ -25,6 +25,7 @@ export default function RootLayout({
             <li><a href="/tools/phishing" className="hover:text-[#34d399]">Phishing</a></li>
             <li><a href="/tools/scan" className="hover:text-[#34d399]">Scanner</a></li>
             <li><a href="/tools/miner" className="hover:text-[#34d399] transition-colors">Miner Builder</a></li>
+            <li><a href="/tools/encrypt" className="hover:text-[#34d399] transition-colors">Encryption</a></li>
             <li><a href="https://hackforums.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#34d399]">Community</a></li>
           </ul>
         </nav>
