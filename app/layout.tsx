@@ -27,7 +27,7 @@ export default function RootLayout({
     <li><a href="/tools/miner" className="hover:text-[#34d399] transition-colors">Miner Builder</a></li>
     <li><a href="/tools/encrypt" className="hover:text-[#34d399] transition-colors">Encryption</a></li>
     <li><a href="/tools/stub" className="hover:text-[#34d399] transition-colors">Stub Gen</a></li>
-
+    <li><a href="/tools/shell-art" className="hover:text-[#34d399] transition-colors">Shell Art</a></li>
     {/* Forum link */}
     <li><a href="/forum" className="hover:text-[#34d399] transition-colors">Forum</a></li>
   </ul>
