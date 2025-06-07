@@ -1,17 +1,22 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import figlet from 'figlet';
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const text = searchParams.get('text') || 'Hello';
+export async function GET(request: NextRequest) {
+  const text = request.nextUrl.searchParams.get('text') || 'Hello';
 
-  return new Promise((resolve) => {
-    figlet.text(text, (err, data) => {
-      if (err) {
-        resolve(NextResponse.json({ error: 'Figlet error' }, { status: 500 }));
-        return;
-      }
-      resolve(NextResponse.json({ ascii: data }, { status: 200 }));
+  // Use figlet in a Promise-wrapped way (since it’s callback-based)
+  const asciiArt = await new Promise<string>((resolve, reject) => {
+    figlet(text, (err, data) => {
+      if (err) reject(err);
+      else resolve(data);
     });
+  });
+
+  // Return plain text response with asciiArt
+  return new NextResponse(asciiArt, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/plain',
+    },
   });
 }
