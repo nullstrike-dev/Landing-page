@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState } from 'react'; import Button from '@/components/ui/Button'; import Input from '@/components/ui/Input'; import Textarea from '@/components/ui/Textarea';
+import { useState } from 'react'; import Button from '@/components/ui/button'; import Input from '@/components/ui/input'; import Textarea from '@/components/ui/textarea';
 
 export default function StubGenerator() { const [host, setHost] = useState(''); const [port, setPort] = useState(''); const [output, setOutput] = useState('');
 
