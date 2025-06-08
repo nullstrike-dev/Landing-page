@@ -36,14 +36,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#064e3b] text-[#8ee3b8] opacity-80 text-center p-4 text-sm">
         Join our community on{' '}
-        <a
-          href="https://hackforums.net"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-[#22c55e]"
-        >
-          HackForums.net
-        </a>{' '}
+        {' '}
         — stay tuned for tool releases!
       </footer>
     </div>
